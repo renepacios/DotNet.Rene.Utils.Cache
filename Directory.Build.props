@@ -1,0 +1,51 @@
+﻿<Project>
+    <Import Project="dependencies.props" />
+    <PropertyGroup>
+        <VersionPrefix>0</VersionPrefix>
+        <Version>$(VersionPrefix).0.1</Version>
+        <FileVersion>$(Version)</FileVersion>
+        <Company>René Pacios</Company>
+        <Copyright>Copyright © $(Company) - $([System.DateTime]::Now.Year)</Copyright>
+        <Authors>René Pacios</Authors>
+        <Description>René Utils Cache</Description>
+        <PackageTags>cache</PackageTags>
+        <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    </PropertyGroup>
+
+
+    <PropertyGroup Label="SDK Versions">
+        <NetStandardTargetVersion>netstandard2.1</NetStandardTargetVersion>
+        <!--<NetCoreTargetVersion>net8;net6</NetCoreTargetVersion>-->
+        <TargetFrameworks>net6;net8.0</TargetFrameworks>
+        <LangVersion>12.0</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>false</Nullable>
+
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+        <WarningsAsErrors></WarningsAsErrors>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <!--<DebugType>embedded</DebugType>-->
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    <PropertyGroup >
+        <!-- Condition="'$(GITHUB_ACTIONS)' == 'true'" -->
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworkMonikerAssemblyAttributesPath>$([System.IO.Path]::Combine('$(IntermediateOutputPath)','$(TargetFrameworkMoniker).AssemblyAttributes$(DefaultLanguageSourceExtension)'))</TargetFrameworkMonikerAssemblyAttributesPath>
+    </PropertyGroup>
+    <ItemGroup>
+        <!-- https://github.com/dotnet/sourcelink/issues/572 -->
+        <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)"/>
+    </ItemGroup>
+</Project>

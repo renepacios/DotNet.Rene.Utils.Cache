@@ -3,8 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__Solution Items", "__Solution Items", "{8A5E16C4-053B-409E-A4A4-E1712E58620A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".repo", ".repo", "{8A5E16C4-053B-409E-A4A4-E1712E58620A}"
 	ProjectSection(SolutionItems) = preProject
+		dependencies.props = dependencies.props
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
@@ -15,13 +18,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{90881210
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{2A00589C-B0B1-49F0-AFF4-F9BDF6FE9BC2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rene.Utils.Cache.Tests", "tests\Rene.Utils.Cache.Tests\Rene.Utils.Cache.Tests.csproj", "{D66C283D-DC88-4678-96F2-DDB5A5FA4E71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rene.Utils.Cache", "src\Rene.Utils.Cache\Rene.Utils.Cache.csproj", "{33EDAD85-9553-4BA3-97E2-D6CB264C3AD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D66C283D-DC88-4678-96F2-DDB5A5FA4E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D66C283D-DC88-4678-96F2-DDB5A5FA4E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D66C283D-DC88-4678-96F2-DDB5A5FA4E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D66C283D-DC88-4678-96F2-DDB5A5FA4E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33EDAD85-9553-4BA3-97E2-D6CB264C3AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33EDAD85-9553-4BA3-97E2-D6CB264C3AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33EDAD85-9553-4BA3-97E2-D6CB264C3AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33EDAD85-9553-4BA3-97E2-D6CB264C3AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D66C283D-DC88-4678-96F2-DDB5A5FA4E71} = {90881210-83CC-423E-A24E-A30898A7632B}
+		{33EDAD85-9553-4BA3-97E2-D6CB264C3AD7} = {5C6B2690-6F3D-44CA-8C1F-F6EEA91EAE59}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BFFAE4D-8804-46EF-B3B6-024F89D088C4}
